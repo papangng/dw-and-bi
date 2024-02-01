@@ -1,5 +1,5 @@
 # Project: Building a Data Modeling with Postgres (SQL)
-
+Name: Yata Chaiyarungkijrat ID: 66199160147
 ## Instruction
 ภายในแฟ้ม Project: Building a Data Modeling with Postgres (SQL) จะมีไฟล์หลักๆที่ใช้อยู่ 3 อย่างได้แก่
 - ไฟล์ create.py เป็นไฟล์ python ที่ใช้ในการสร้างตารางเพื่อรองรับข้อมูลที่เรากำลังจะดึงข้อมูลมาลง
