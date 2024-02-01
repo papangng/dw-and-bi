@@ -21,6 +21,8 @@ table_create_events = """
         id text,
         type text,
         actor_id int,
+        repo_id int,
+        repo_name text,
         PRIMARY KEY(id),
         CONSTRAINT fk_actor FOREIGN KEY(actor_id) REFERENCES actors(id)
     )

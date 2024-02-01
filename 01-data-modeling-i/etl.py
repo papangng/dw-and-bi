@@ -33,7 +33,7 @@ def process(cur, conn, filepath):
             for each in data:
                 # Print some sample data
                 
-                if each["type"] == "IssueCommentEvent":
+                if each["type"] == "CreateEvent":
                     print(
                         each["id"], 
                         each["type"],
@@ -59,6 +59,7 @@ def process(cur, conn, filepath):
                 insert_statement = f"""
                     INSERT INTO actors (
                         id,
+                        type,
                         login
                     ) VALUES ({each["actor"]["id"]}, '{each["actor"]["login"]}')
                     ON CONFLICT (id) DO NOTHING
@@ -72,7 +73,7 @@ def process(cur, conn, filepath):
                         id,
                         type,
                         actor_id
-                    ) VALUES ('{each["id"]}', '{each["type"]}', '{each["actor"]["id"]}')
+                    ) VALUES ('{each["id"]}', '{each["type"]}', '{each["actor"]["id"]}', '{each["repo"]["id"]}', '{each["repo"]["name"]}')
                     ON CONFLICT (id) DO NOTHING
                 """
                 # print(insert_statement)
